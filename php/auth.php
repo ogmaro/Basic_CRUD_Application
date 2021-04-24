@@ -23,7 +23,7 @@ if (isset($_POST['email']) && isset($_POST['psw'])) {
             $user = $stmt->fetch();
 
             //Get data from the database
-            $user_full_name = $user['name_'];
+            $user_full_name = $user['name'];
             $user_email = $user['email'];
             $user_phone = $user['phone'];
 

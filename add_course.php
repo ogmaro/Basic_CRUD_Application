@@ -1,6 +1,6 @@
 <?php
 session_start();
-
+$_SESSION['full_name'];
 ?>
 <!DOCTYPE html>
 <html>
@@ -13,15 +13,9 @@ session_start();
 
 <body>
     <div class="container">
-        <form action="php/create.php" method="post">
-
+        <form action="php/add.php" method="post">
+            <h3 class="display-4 text-center">Welcome <?php echo $_SESSION['full_name']; ?></h3>
             <h4 class="display-4 text-center">Add Course</h4>
-            <?php if (isset($_SESSION['full_name'])) { ?>
-                <div>
-                    <h2><?php echo $_SESSION['full_name'] ?></h2>
-                    <h2><?php echo $_SESSION['email'] ?></h2>
-                </div>
-            <?php } ?>
             <hr><br>
             <?php if (isset($_GET['error'])) { ?>
                 <div class="alert alert-danger" role="alert">
@@ -29,23 +23,19 @@ session_start();
                 </div>
             <?php } ?>
             <div class="form-group">
-                <label for="name">Course name</label>
+                <label for="name">Name</label>
                 <input type="name" class="form-control" id="name" name="name" value="<?php if (isset($_GET['name']))
                                                                                             echo ($_GET['name']); ?>" placeholder="Enter name">
             </div>
 
             <div class="form-group">
-                <label for="email">Course unit</label>
-                <input type="email" class="form-control" id="email" name="unit" value="<?php if (isset($_GET['Unit']))
-                                                                                            echo ($_GET['Unit']); ?>" placeholder="Enter Unit">
+                <label for="text">Unit</label>
+                <input type="unit" class="form-control" id="email" name="unit" value="<?php if (isset($_GET['unit']))
+                                                                                            echo ($_GET['unit']); ?>" placeholder="Enter unit">
             </div>
 
             <button type="submit" class="btn btn-primary" name="create">Add</button>
-            <a href="view.php" class="link-primary">View</a>
-
-            <div class="container signin">
-                <p>Don't have an account? <a href="php/logout.php">logout</a>.</p>
-            </div>
+            <a href="read.php" class="link-primary">View</a>
         </form>
     </div>
 </body>

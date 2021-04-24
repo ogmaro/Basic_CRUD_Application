@@ -1,5 +1,9 @@
 <?php
-if (isset($_SESSION['full_name']) && isset($_SESSION['email'])) {
+session_start();
+// Include dependent database file
+include '../db/config.php';
+
+if (isset($_SESSION['full_name'])) {
     function validate($data)
     {
         $data = trim($data);
@@ -9,21 +13,22 @@ if (isset($_SESSION['full_name']) && isset($_SESSION['email'])) {
     }
     //Check input 
     $name = validate($_POST["name"]);
-    $email = validate($_POST["unit"]);
+    $unit = validate($_POST["unit"]);
 
     if (empty($name)) {
         header("Location: add_course.php?error=Name is Required");
     } else if (empty($unit)) {
         header("Location: add_course.php?error=Unit is Required");
     } else {
-        include "./db/config.php";
-        $query = "INSERT INTO users(name, email) 
-               VALUES('$name', '$email')";
+        $query = "INSERT INTO courses(name, unit) 
+               VALUES('$name', '$unit')";
         $result = mysqli_query($conn, $query);
         if ($result) {
-            header("Location: ../read.php?success=successfully created");
+            header("Location: ../add_course.php?error=successfully created");
         } else {
             header("Location: ../add_course.php?error=Unexpected error occured while creating data");
         }
     }
+} else {
+    header("Location: ../add_course.php?error=Please signin to add course");
 }
