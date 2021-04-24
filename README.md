@@ -1,6 +1,6 @@
 1. Authentication
 
-- register (a new user can register, their details stored in a MySQL database). 
+- register (a new user can register, their details stored in a MySQL database). Done
 
 - login (checks the database if the user is registered or not)
 
@@ -12,10 +12,8 @@
 
 - Add a course.
 
-- View all courses added by a user. 
+- View all courses added by a user.
 
 - Edit a particular Course
 
 - Delete a particular Course
-
- 

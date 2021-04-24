@@ -26,16 +26,18 @@ if (isset($_POST["submit"])) {
     } else if (empty($password)) {
         header("Location: index.php?error=Password is Required");
     } else {
-        $register = $conn->prepare("SELECT * FROM users WHERE email=?");
-        $register->execute([$email]);
-        if ($register->rowCount() === 1) {
-            header("Location: index.php?error=User already exist");
+        $sql_e = "SELECT * FROM users WHERE email='$email'";
+        $res_e = mysqli_query($conn, $sql_e);
+
+        if (mysqli_num_rows($res_e) > 0) {
+            header("Location: ../index.php?error=User $name already exist");
         } else {
+            $hashed_password = password_hash($password, PASSWORD_DEFAULT);
             $sql = "INSERT INTO users (name, email, phone, psw)
-                    VALUES ('$name', '$email', '$phone', '$password')";
+                    VALUES ('$name', '$email', '$phone', '$hashed_password')";
             $result =  mysqli_query($conn, $sql);
             if ($result) {
-                header("Location: Success.php");
+                header("Location: success.php");
             } else {
                 header("Location: ../index.php?error=Unexpected error");
             }
