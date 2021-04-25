@@ -1,8 +1,7 @@
 <?php
 session_start();
 // Include dependent database file
-include '../db/config.php';
-
+include '../db/db.php';
 
 if (isset($_POST['email']) && isset($_POST['psw'])) {
     $email = $_POST['email'];

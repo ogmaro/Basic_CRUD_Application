@@ -32,9 +32,8 @@ if (isset($_POST["submit"])) {
         if (mysqli_num_rows($res_e) > 0) {
             header("Location: ../index.php?error=User $name already exist");
         } else {
-            $hashed_password = password_hash($password, PASSWORD_DEFAULT);
             $sql = "INSERT INTO users (name, email, phone, psw)
-                    VALUES ('$name', '$email', '$phone', '$hashed_password')";
+                    VALUES ('$name', '$email', '$phone', '$password')";
             $result =  mysqli_query($conn, $sql);
             if ($result) {
                 header("Location: success.php");

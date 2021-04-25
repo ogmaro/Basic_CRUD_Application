@@ -2,7 +2,7 @@
 
 - register (a new user can register, their details stored in a MySQL database). Done
 
-- login (checks the database if the user is registered or not)
+- login (checks the database if the user is registered or not) Done
 
 - reset password
 
