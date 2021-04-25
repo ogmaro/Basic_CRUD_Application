@@ -9,7 +9,7 @@
 
 <body>
 
-    <form action="./php/auth.php" method="post">
+    <form action="./php/login.php" method="post">
         <div class="container">
             <h1>Zuri - Login</h1>
             <p>Sign in your account here</p>

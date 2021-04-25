@@ -27,7 +27,7 @@ if (isset($_POST['email']) && isset($_POST['psw'])) {
             $user_phone = $user['phone'];
 
             //Create Session
-            $_SESSION['full_name'] = $user_full_name;
+            $_SESSION['name'] = $user_full_name;
             $_SESSION['email'] = $user_email;
             $_SESSION['phone'] = $user_phone;
             header("Location: ../add_course.php");

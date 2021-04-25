@@ -1,5 +1,6 @@
 <?php
 session_start();
+$name = $_SESSION['name']
 ?>
 <!DOCTYPE html>
 <html>
@@ -13,11 +14,7 @@ session_start();
 <body>
     <div class="container">
         <form action="php/add.php" method="post">
-            <h3 class="display-4 text-center">Welcome <?php if ($_SESSION['full_name']) {
-                                                            return $_SESSION['full_name'];
-                                                        } else {
-                                                            echo "";
-                                                        } ?></h3>
+            <h4 class="display-4 text-center">Welcome <?php echo $name; ?></h4>
             <h4 class="display-4 text-center">Add Course</h4>
             <hr><br>
             <?php if (isset($_GET['error'])) { ?>
