@@ -10,10 +10,10 @@
 
 2. Dashboard
 
-- Add a course.
+- Add a course. Done
 
-- View all courses added by a user.
+- View all courses added by a user. Done
 
-- Edit a particular Course
+- Edit a particular Course. Done
 
-- Delete a particular Course
+- Delete a particular Course. Done
