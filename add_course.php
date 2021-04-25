@@ -1,6 +1,5 @@
 <?php
 session_start();
-$_SESSION['full_name'];
 ?>
 <!DOCTYPE html>
 <html>
@@ -14,7 +13,11 @@ $_SESSION['full_name'];
 <body>
     <div class="container">
         <form action="php/add.php" method="post">
-            <h3 class="display-4 text-center">Welcome <?php echo $_SESSION['full_name']; ?></h3>
+            <h3 class="display-4 text-center">Welcome <?php if ($_SESSION['full_name']) {
+                                                            return $_SESSION['full_name'];
+                                                        } else {
+                                                            echo "";
+                                                        } ?></h3>
             <h4 class="display-4 text-center">Add Course</h4>
             <hr><br>
             <?php if (isset($_GET['error'])) { ?>
@@ -35,7 +38,7 @@ $_SESSION['full_name'];
             </div>
 
             <button type="submit" class="btn btn-primary" name="create">Add</button>
-            <a href="read.php" class="link-primary">View</a>
+            <a href="show_course.php" class="link-primary">View</a>
         </form>
     </div>
 </body>
