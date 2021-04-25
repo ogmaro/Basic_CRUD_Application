@@ -1,5 +1,8 @@
 <?php
 session_start();
+if ($_SESSION['name'] == NULL) {
+    header("Location: login.php?error=Please sign in to Add course");
+}
 $name = $_SESSION['name'];
 ?>
 <!DOCTYPE html>

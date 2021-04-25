@@ -1,5 +1,8 @@
 <?php
 session_start();
+if ($_SESSION['name'] == NULL) {
+    header("Location: login.php?error=Please sign in to Show course");
+}
 include "php/show_course.php";
 
 ?>

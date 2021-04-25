@@ -1,5 +1,8 @@
 <?php
 session_start();
+if ($_SESSION['name'] == NULL) {
+    header("Location: index.php?error=Please sign");
+}
 ?>
 <!DOCTYPE html>
 

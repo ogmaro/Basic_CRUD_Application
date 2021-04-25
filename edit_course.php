@@ -1,5 +1,8 @@
 <?php
 session_start();
+if ($_SESSION['name'] == NULL) {
+    header("Location: login.php?error=Please sign in to Edit course");
+}
 include "php/edit_course.php";
 ?>
 <!DOCTYPE html>
