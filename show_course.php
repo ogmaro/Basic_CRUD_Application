@@ -11,6 +11,9 @@
 <body>
     <div class="container">
         <div class="box">
+            <div class="container signin">
+                <h5> <a href="logout.php">Logout</a></h5>
+            </div>
             <h4 class="display-4 text-center">Courses registered by You</h4><br>
             <?php if (isset($_GET['success'])) { ?>
                 <div class="alert alert-success" role="alert">

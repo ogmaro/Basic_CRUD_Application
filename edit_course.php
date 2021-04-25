@@ -10,6 +10,9 @@
 
 <body>
     <div class="container">
+        <div class="container signin">
+            <h5> <a href="logout.php">Logout</a></h5>
+        </div>
         <form action="php/edit_course.php" method="post">
 
             <h4 class="display-4 text-center">Update</h4>

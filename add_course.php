@@ -16,6 +16,9 @@ $name = $_SESSION['name']
         <form action="php/add.php" method="post">
             <h4 class="display-4 text-center">Welcome <?php echo $name; ?></h4>
             <h4 class="display-4 text-center">Add Course</h4>
+            <div class="container signin">
+                <h5> <a href="logout.php">Logout</a></h5>
+            </div>
             <hr><br>
             <?php if (isset($_GET['error'])) { ?>
                 <div class="alert alert-danger" role="alert">
