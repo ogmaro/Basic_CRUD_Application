@@ -1,4 +1,7 @@
-<?php include 'php/edit_course.php'; ?>
+<?php
+session_start();
+include "php/edit_course.php";
+?>
 <!DOCTYPE html>
 <html>
 
@@ -15,7 +18,7 @@
         </div>
         <form action="php/edit_course.php" method="post">
 
-            <h4 class="display-4 text-center">Update</h4>
+            <h4 class="display-4 text-center">Update by <?php echo $_SESSION['name']; ?></h4>
             <hr><br>
             <?php if (isset($_GET['error'])) { ?>
                 <div class="alert alert-danger" role="alert">

@@ -4,7 +4,7 @@
 session_start();
 
 // Unset all of the session variables
-unset($_SESSION["email"]);
+unset($_SESSION["name"]);
 
 // Destroy the session.
 session_destroy();

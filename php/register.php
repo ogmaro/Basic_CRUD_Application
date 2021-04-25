@@ -1,4 +1,6 @@
+
 <?php
+session_start();
 //Connect to database using the include function
 include "../db/config.php";
 if (isset($_POST["submit"])) {
@@ -35,8 +37,9 @@ if (isset($_POST["submit"])) {
             $sql = "INSERT INTO users (name, email, phone, psw)
                     VALUES ('$name', '$email', '$phone', '$password')";
             $result =  mysqli_query($conn, $sql);
+            $_SESSION["name"] = $name;
             if ($result) {
-                header("Location: success.php");
+                header("Location: ../success.php");
             } else {
                 header("Location: ../index.php?error=Unexpected error");
             }

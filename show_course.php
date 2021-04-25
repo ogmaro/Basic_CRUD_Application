@@ -1,4 +1,8 @@
-<?php include "php/show_course.php"; ?>
+<?php
+session_start();
+include "php/show_course.php";
+
+?>
 <!DOCTYPE html>
 <html>
 
@@ -14,7 +18,7 @@
             <div class="container signin">
                 <h5> <a href="logout.php">Logout</a></h5>
             </div>
-            <h4 class="display-4 text-center">Courses registered by You</h4><br>
+            <h4 class="display-4 text-center">Courses registered by <?php echo $_SESSION['name']; ?></h4><br>
             <?php if (isset($_GET['success'])) { ?>
                 <div class="alert alert-success" role="alert">
                     <?php echo $_GET['success']; ?>
