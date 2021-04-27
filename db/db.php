@@ -3,9 +3,11 @@ $servername = "localhost";
 $username = "root";
 $password = "";
 $database = "schooldb";
+$database = "schooldb";
+$port = "3306";
 
 try {
-    $conn = new PDO("mysql:host=$servername;dbname=$database", $username, $password);
+    $conn = new PDO("mysql:host=$servername;dbname=$database", $username, $password, $port);
     // set the PDO error mode to exception
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     echo "Connected successfully";
