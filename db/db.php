@@ -1,9 +1,8 @@
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$database = "schooldb";
-$database = "schooldb";
+$servername = "remotemysql.com";
+$username = "jMIc9WLst8";
+$password = "3g2b3EZ1V4";
+$database = "jMIc9WLst8";
 $port = "3306";
 
 try {
